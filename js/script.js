@@ -67,6 +67,28 @@ createApp ({
 
         }
 
-    }
+    },
+    // Creo due funzioni per far scorrere le slides
+    methods: {
+        
+        // Funzione che se l'indice della slide supera 
+        // la lunghezza dell'array slides lo riporta a 0
+        nextSlide(){
+            this.seenSlideIndex++;
+            if(this.seenSlideIndex >= this.slides.length){
+                this.seenSlideIndex = 0;
+            }
+        },
+
+        // Funzione che se l'indice della slide
+        // è minore di 0 lo riporta all'ultima slide
+        prevSlide(){
+            this.seenSlideIndex--;
+            if(this.seenSlideIndex < 0){
+                this.seenSlideIndex = this.slides.length -1;
+            }
+        },
+
+    },
     
 }).mount('#app');
