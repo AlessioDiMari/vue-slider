@@ -18,7 +18,10 @@
             <div class="slider-wrapper" tabindex="0">
 
                 <!-- Rendo dinamica la slide -->
-                <div v-for="seenSlide in slides" class="item">
+                <div v-for="(seenSlide, index) in slides" 
+                    class="item"
+                    v-show="index == seenSlideIndex">
+
                     <img :src="seenSlide.image" alt="Spiderman" />
                     <div class="text">
                         <h3>{{seenSlide.title}}</h3>
